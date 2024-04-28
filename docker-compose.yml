@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  jenkins-prod:
+    build: .
+    image: jenkins-prod
+    container_name: jenkins-prod
+    ports:
+      - "127.0.0.1:10010:8080"
+    environment:
+      - TZ=America/Sao_Paulo
+    volumes:
+      - jenkins_data:/var/jenkins_home
+    restart: always
+volumes:
+  jenkins_data:
