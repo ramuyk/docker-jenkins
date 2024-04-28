@@ -10,6 +10,11 @@ services:
       - TZ=America/Sao_Paulo
     volumes:
       - jenkins_data:/var/jenkins_home
+    deploy:
+      resources:
+        limits:
+          memory: 8G
+          cpus: '4'
     restart: always
 volumes:
   jenkins_data:
